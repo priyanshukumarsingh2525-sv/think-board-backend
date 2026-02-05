@@ -14,14 +14,14 @@ dotenv.config()
 const app = express();
 const PORT = process.env.PORT || 5001
 app.use(cors(
-   { origin:"http://localhost:5173"}
+   { origin:["http://localhost:5173","https://think-boardtrafficcontrol.vercel.app"]}
 ))
 
 app.use(express.json()); // this middleware will parse JSON bodies: req.body
 app.use(rateLimiter)
 app.use("/api/notes", notesRoutes)
 
-connectDB().then(() =>{app.listen(5001, ()=>{
+connectDB().then(() =>{app.listen(PORT, ()=>{
     console.log(`Server Started on port: ${PORT}`)
  });
 });
