@@ -14,7 +14,7 @@ dotenv.config()
 const app = express();
 const PORT = process.env.PORT || 5001
 app.use(cors(
-   { origin:["http://localhost:5173","https://think-boardtrafficcontrol.vercel.app"]}
+   { origin:["http://localhost:5173","https://think-board-sigma.vercel.app/.app"]}
 ))
 
 app.use(express.json()); // this middleware will parse JSON bodies: req.body
